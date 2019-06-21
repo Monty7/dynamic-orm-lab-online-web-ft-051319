@@ -56,7 +56,7 @@ class InteractiveRecord
     #results << key => value
     sql = "SELECT * FROM #{self.table_name} WHERE '#{key}' = '#{value}'"
     
-    #binding.pry
+    binding.pry
     DB[:conn].execute(sql)
    end
   end
