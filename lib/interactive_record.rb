@@ -48,11 +48,11 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(row)
+  def self.find_by(attr_hash)
     #binding.pry
-    sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
-    # binding.pry
-    DB[:conn].execute(sql, row)
+    sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
+     binding.pry
+    DB[:conn].execute(sql, attr_hash, )
    
   end
   
