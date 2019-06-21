@@ -1,5 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
+require 'pry'
 
 class InteractiveRecord
   def self.table_name
@@ -40,6 +41,18 @@ class InteractiveRecord
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
     values.join(", ")
+  end
+  
+  def self.find_by_name(name)
+    sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
+    DB[:conn].execute(sql, name)
+  end
+  
+  def self.find_by(name)
+    #binding.pry
+    sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
+    DB[:conn].execute(sql, name)
+    binding.pry
   end
   
   def save
