@@ -55,10 +55,10 @@ class InteractiveRecord
     #[{"grade"=>10, "id"=>1, "name"=>"Susan"}]
  
     sql = "SELECT * FROM #{self.table_name} WHERE '#{key}' = '#{value}'"
-    end
+    
    # binding.pry
     DB[:conn].execute(sql)
-  
+  end
   end
   
   def save
