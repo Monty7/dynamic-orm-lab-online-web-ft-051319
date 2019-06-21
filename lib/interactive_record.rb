@@ -52,7 +52,7 @@ class InteractiveRecord
     results = []
     attr_hash.each do |key, value|
     #binding.pry
-    results << key[value] => value
+    results << key => value
     sql = "SELECT * FROM #{self.table_name} WHERE '#{key}' = '#{value}'"
     
     binding.pry
