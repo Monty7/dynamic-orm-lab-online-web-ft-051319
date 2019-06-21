@@ -48,11 +48,11 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(name)
+  def self.find_by(row)
     #binding.pry
     sql = "SELECT * FROM #{self.table_name}"
     # binding.pry
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, row)
    
   end
   
