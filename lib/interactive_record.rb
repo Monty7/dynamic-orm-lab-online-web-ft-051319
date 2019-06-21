@@ -49,12 +49,13 @@ class InteractiveRecord
   end
   
   def self.find_by(attr_hash)
-  binding.pry
+    results = ''
     attr_hash.each do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
-
-      return DB[:conn].execute(sql)
+      results = DB[:conn].execute(sql)
+      
     end
+    results
   end
   
   def save
