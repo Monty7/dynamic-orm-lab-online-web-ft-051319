@@ -49,10 +49,10 @@ class InteractiveRecord
   end
   
   def self.find_by(attr_hash)
-    #binding.pry
+    binding.pry
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-     binding.pry
-    DB[:conn].execute(sql, attr_hash, )
+    # binding.pry
+    DB[:conn].execute(sql, attr_hash)
    
   end
   
