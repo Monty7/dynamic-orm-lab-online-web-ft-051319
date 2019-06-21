@@ -53,7 +53,7 @@ class InteractiveRecord
     attr_hash.each do |key, value|
    # binding.pry
     #[{"grade"=>10, "id"=>1, "name"=>"Susan"}]
-    #results << key => value
+ 
     sql = "SELECT * FROM #{self.table_name} WHERE '#{key}' = '#{value}'"
     end
    # binding.pry
